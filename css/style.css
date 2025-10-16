@@ -6,6 +6,7 @@
   --header-height: 72px;
 }
 
+/* RESET Y BASE */
 html, body{
   height:100%;
   margin:0;
@@ -14,6 +15,7 @@ html, body{
   background: var(--main-bg);
 }
 
+/* HEADER GENERAL */
 .site-header{
   position:fixed;
   top:0;
@@ -38,6 +40,43 @@ html, body{
   background: currentColor;
   opacity:0.15;
   width:100%;
+}
+
+/* PORTADA: menu centrado */
+.header-cover .header-center{
+  font-family: Georgia, serif;
+  font-weight:bold;
+  font-size:24px;
+  color: var(--text-main);
+  text-align:center;
+}
+
+/* PORTADA overlay y logo */
+.cover-section{
+  position:relative;
+  width:100%;
+  height:100vh;
+  background: url("../img/cover-background.jpg") center/cover no-repeat;
+}
+
+.cover-overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(237,233,225,0.4);
+}
+
+.cover-logo{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  cursor:pointer;
+  max-width:900px;
+  width:80%;
+  height:auto;
 }
 
 /* HEADER PORTFOLIO */
@@ -73,7 +112,7 @@ html, body{
   padding:6px 8px;
 }
 
-/* TÍTULO PRINCIPAL */
+/* TÍTULO PRINCIPAL PORTFOLIO */
 .title-section{
   padding-top: calc(var(--header-height) + 60px);
   padding-bottom:40px;
@@ -131,3 +170,148 @@ html, body{
 .work-item:hover img{
   transform: scale(1.03);
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* BLOQUE ABOUT */
+.about-section{
+  background: var(--accent);
+  color: var(--text-on-accent);
+  padding:60px 20px;
+}
+
+.about-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  gap:24px;
+  align-items:stretch;
+}
+
+.about-left, .about-right{
+  box-sizing:border-box;
+  padding:24px;
+}
+
+.about-left{
+  flex:1; /* izquierda texto */
+}
+
+.about-right{
+  flex:1; /* derecha imagen */
+}
+
+.about-title{
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size:56px;
+  margin:0 0 20px 0;
+}
+
+.about-text p{
+  margin:8px 0;
+  line-height:1.45;
+}
+
+.about-right img.about-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* BLOQUE CONTACT */
+.contact-section{
+  background: var(--main-bg);
+  color: var(--text-main);
+  padding:60px 20px;
+}
+
+.contact-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  gap:24px;
+  align-items:stretch;
+}
+
+.contact-left, .contact-right{
+  box-sizing:border-box;
+  padding:24px;
+}
+
+.contact-left{
+  flex:1; /* imagen izquierda */
+}
+
+.contact-left img.contact-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.contact-right{
+  flex:1; /* formulario derecha */
+}
+
+.contact-title{
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size:48px;
+  margin:0 0 20px 0;
+}
+
+/* FORMULARIO CONTACT */
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  max-width:500px;
+}
+
+.contact-form label{
+  font-weight:bold;
+  font-size:14px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:8px;
+  font-size:14px;
+  border:1px solid #ccc;
+  border-radius:4px;
+  width:100%;
+  box-sizing:border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-form button{
+  padding:10px 16px;
+  background: var(--accent);
+  color:#fff;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  font-weight:bold;
+  transition: background 0.25s ease;
+}
+
+.contact-form button:hover{
+  background: #000000;
+}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .name-title{ font-size:42px; flex-direction:column; gap:12px; }
+  .title-avatar{ height:350px; }
+  .works-grid{ grid-template-columns: repeat(2, 1fr); }
+  .work-item{ width:100%; height:0; padding-bottom:66.66%; }
+  .about-inner, .contact-inner{ flex-direction:column; }
+}
+
+@media (max-width:520px){
+  .works-grid{ grid-template-columns: 1fr; }
+  .work-item{ width:100%; height:0; padding-bottom:66.66%; }
+  .name-title{ font-size:34px; }
+}
+

@@ -1,129 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Patricia de Andrés — Portfolio</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Nota: Playfair Display es alternativa si no subes Dahlia; el CSS permite @font-face para Dahlia -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="portfolio-body">
+<body>
 
-  <!-- Menú fijo (mismo alto que en portada) -->
-  <header class="site-header">
-    <div class="header-inner header-full">
-      <div class="header-left social-group">
-        <a href="mailto:tu@correo.com" class="icon-sm" aria-label="Email"><img src="img/icon-mail.png" alt="mail" width="128" height="128"></a>
-        <a href="https://behance.net/" class="icon-sm" target="_blank" rel="noopener" aria-label="Behance"><img src="img/icon-behance.png" alt="Behance" width="128" height="128"></a>
-        <a href="https://linkedin.com/" class="icon-sm" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="img/icon-linkedin.png" alt="LinkedIn" width="128" height="128"></a>
-      </div>
-
-      <div class="header-center center-empty"></div>
-
-      <nav class="header-right nav-links">
-        <a class="btn-link" href="#about">About</a>
-        <a class="btn-link" href="#contact">Contact</a>
-      </nav>
+<header class="site-header portfolio-header">
+  <div class="header-inner">
+    <!-- IZQUIERDA: iconos -->
+    <div class="header-left social-group">
+      <a href="mailto:tu@correo.com" class="icon-sm"><img src="img/icon-mail.png" alt="mail"></a>
+      <a href="https://behance.net/" class="icon-sm" target="_blank" rel="noopener"><img src="img/icon-behance.png" alt="Behance"></a>
+      <a href="https://linkedin.com/" class="icon-sm" target="_blank" rel="noopener"><img src="img/icon-linkedin.png" alt="LinkedIn"></a>
     </div>
-    <div class="header-underline"></div>
-  </header>
 
-  <main>
-    <!-- TITLE: Patricia [avatar] de Andrés -->
-    <section class="title-section">
-      <h1 class="name-title">
-        <span class="name-left">Patricia</span>
-        <img src="img/avatar-between.png" alt="avatar" class="title-avatar" width="300" height="600">
-        <span class="name-right">de Andrés</span>
-      </h1>
-    </section>
+    <!-- CENTRO vacío -->
+    <div class="header-center"></div>
 
-    <!-- GRID 3x3 -->
-    <section class="works-section">
-      <div class="works-grid" id="works">
-        <a href="obra1.html" class="work-item"><img src="img/SNF-1.jpg" alt="Obra 1"></a>
-        <a href="obra2.html" class="work-item"><img src="img/work2.jpg" alt="Obra 2"></a>
-        <a href="obra3.html" class="work-item"><img src="img/work3.jpg" alt="Obra 3"></a>
-        <a href="obra4.html" class="work-item"><img src="img/work4.jpg" alt="Obra 4"></a>
-        <a href="obra5.html" class="work-item"><img src="img/work5.jpg" alt="Obra 5"></a>
-        <a href="obra6.html" class="work-item"><img src="img/work6.jpg" alt="Obra 6"></a>
-        <a href="obra7.html" class="work-item"><img src="img/work7.jpg" alt="Obra 7"></a>
-        <a href="obra8.html" class="work-item"><img src="img/work8.jpg" alt="Obra 8"></a>
-        <a href="obra9.html" class="work-item"><img src="img/work9.jpg" alt="Obra 9"></a>
-      </div>
-    </section>
+    <!-- DERECHA: enlaces -->
+    <div class="header-right">
+      <a class="btn-link" href="#about">About</a>
+      <a class="btn-link" href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="header-underline"></div>
+</header>
 
-    <!-- ABOUT block -->
-    <section id="about" class="about-section">
-      <div class="about-inner">
-        <div class="about-left">
-          <h2 class="about-title">About</h2>
+<main>
+  <!-- TÍTULO PRINCIPAL -->
+  <section class="title-section">
+    <h1 class="name-title">
+      <span>Patricia</span>
+      <img src="img/avatar-between.png" alt="avatar" class="title-avatar">
+      <span>de Andrés</span>
+    </h1>
+  </section>
 
-          <!-- ~20 líneas de Lorem Ipsum (breves frases en párrafos) -->
-          <div class="about-text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-            <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
-            <p>Duis sagittis ipsum. Praesent mauris.</p>
-            <p>Fusce nec tellus sed augue semper porta.</p>
-            <p>Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
-            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
-            <p>Per inceptos himenaeos. Curabitur sodales ligula in libero.</p>
-            <p>Sed dignissim lacinia nunc.</p>
-            <p>Curabitur tortor. Pellentesque nibh.</p>
-            <p>Aenean quam. In scelerisque sem at dolor.</p>
-            <p>Maecenas mattis. Sed convallis tristique sem.</p>
-            <p>Proin ut ligula vel nunc egestas porttitor.</p>
-            <p>Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa.</p>
-            <p>Fusce ac turpis quis ligula lacinia aliquet.</p>
-            <p>Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.</p>
-            <p>Quisque volutpat condimentum velit.</p>
-            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos.</p>
-            <p>Etiam ultricies nisi vel augue.</p>
-            <p>Curabitur ullamcorper ultricies nisi.</p>
-          </div>
-        </div>
+  <!-- GRID DE OBRAS -->
+  <section class="works-section" id="works">
+    <div class="works-grid">
+      <a href="obra1.html" class="work-item"><img src="img/SNF-1.jpg" alt="Obra 1"></a>
+      <a href="obra2.html" class="work-item"><img src="img/work2.jpg" alt="Obra 2"></a>
+      <a href="obra3.html" class="work-item"><img src="img/work3.jpg" alt="Obra 3"></a>
+      <a href="obra4.html" class="work-item"><img src="img/work4.jpg" alt="Obra 4"></a>
+      <a href="obra5.html" class="work-item"><img src="img/work5.jpg" alt="Obra 5"></a>
+      <a href="obra6.html" class="work-item"><img src="img/work6.jpg" alt="Obra 6"></a>
+      <a href="obra7.html" class="work-item"><img src="img/work7.jpg" alt="Obra 7"></a>
+      <a href="obra8.html" class="work-item"><img src="img/work8.jpg" alt="Obra 8"></a>
+      <a href="obra9.html" class="work-item"><img src="img/work9.jpg" alt="Obra 9"></a>
+    </div>
+  </section>
 
-        <div class="about-right">
-          <img src="img/placeholder-about.png" alt="About image" class="about-image" width="960" height="1080">
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT block -->
-    <section id="contact" class="contact-section">
-      <div class="contact-inner">
-        <div class="contact-left">
-          <img src="img/placeholder-contact.png" alt="Contact image" class="contact-image" width="960" height="1080">
-        </div>
-
-        <div class="contact-right">
-          <h2 class="contact-title">Contact</h2>
-
-          <div class="contact-menu">
-            <p>Escríbeme por email:</p>
-            <ul>
-              <li><a href="mailto:tu@correo.com?subject=Contacto%20desde%20portfolio">tu@correo.com</a></li>
-              <li><a href="mailto:tu@correo.com?subject=Consulta%20proyecto">Consulta proyecto</a></li>
-              <li><a href="mailto:tu@correo.com?subject=Collab">Colaboración</a></li>
-            </ul>
-
-            <p>O sígueme en:</p>
-            <ul class="contact-links">
-              <li><a href="https://behance.net/" target="_blank" rel="noopener">Behance</a></li>
-              <li><a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
-            </ul>
-          </div>
-
+  <!-- BLOQUE ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-left">
+        <h2 class="about-title">About</h2>
+        <div class="about-text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+          <p>Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.</p>
+          <p>Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.</p>
+          <p>Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.</p>
+          <p>Pellentesque congue. Ut in risus volutpat libero pharetra tempor.</p>
+          <p>Cras vestibulum bibendum augue. Praesent egestas leo in pede.</p>
+          <p>Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.</p>
+          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+          <p>Nulla facilisi. Sed lectus. Integer euismod lacus luctus magna.</p>
+          <p>Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam.</p>
+          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+          <p>Integer euismod lacus luctus magna.</p>
+          <p>Quisque cursus, metus vitae pharetra auctor.</p>
+          <p>Sem massa mattis sem, at interdum magna augue eget diam.</p>
+          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+          <p>Integer euismod lacus luctus magna.</p>
+          <p>Quisque cursus, metus vitae pharetra auctor.</p>
+          <p>Sem massa mattis sem, at interdum magna augue eget diam.</p>
+          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
         </div>
       </div>
-    </section>
+      <div class="about-right">
+        <img src="img/placeholder-about.png" alt="About image" class="about-image">
+      </div>
+    </div>
+  </section>
 
-  </main>
+  <!-- BLOQUE CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <img src="img/placeholder-contact.png" alt="Contact image" class="contact-image">
+      </div>
+      <div class="contact-right">
+        <h2 class="contact-title">Contact</h2>
+        <ul class="contact-menu">
+          <li>Email: <a href="mailto:tu@correo.com">tu@correo.com</a></li>
+          <li>Behance: <a href="https://behance.net/">behance.net/tuusuario</a></li>
+          <li>LinkedIn: <a href="https://linkedin.com/">linkedin.com/in/tuusuario</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <script src="js/main.js"></script>
+</main>
+
+<script src="js/main.js"></script>
 </body>
 </html>

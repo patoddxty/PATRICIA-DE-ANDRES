@@ -94,7 +94,7 @@ html, body{
 
 /* ----------------- PORTADA ----------------- */
 .cover-body, .cover-main{
-  min-height:100vh;
+  min-height:50vh;
 }
 
 .cover-section{

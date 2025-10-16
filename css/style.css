@@ -1,0 +1,252 @@
+/* Tipografías */
+@font-face {
+  font-family: "Dahlia";
+  src: url("../fonts/Dahlia-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ede9e1;
+  font-family: "Montserrat", sans-serif;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+/* Header general */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: none;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+/* Variante portada */
+.header-cover .header-center {
+  flex: 1;
+  text-align: center;
+  font-family: "Dahlia", serif;
+  font-size: 24px;
+}
+
+.header-cover .header-right .icon {
+  margin-left: 15px;
+}
+
+/* Variante full */
+.header-full {
+  display: none; 
+}
+
+.header-full .header-left .icon {
+  margin-right: 15px;
+}
+
+.header-full .header-right .btn-link {
+  margin-left: 15px;
+  text-decoration: none;
+  font-family: "Dahlia", serif;
+  font-size: 18px;
+  color: #000;
+}
+
+.header-underline {
+  width: 100%;
+  height: 1px;
+  background: #000;
+}
+
+/* Mostrar header full al activar */
+body.full-active .header-cover {
+  display: none;
+}
+body.full-active .header-full {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* COVER */
+.cover-section {
+  position: relative;
+  height: 100vh;
+  background: url("../img/texture.jpg") center/cover no-repeat;
+}
+
+.cover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.cover-portfolio-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portfolio-badge {
+  display: block;
+  max-width: 300px;
+}
+
+/* FULL SECTION */
+.full-section {
+  padding-top: 150px;
+}
+
+.logo-slot {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo-img {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Título con monigote */
+.name-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Dahlia", serif;
+  font-size: 70px;
+  margin: 0 0 60px 0;
+}
+
+.name-monigote {
+  display: inline-block;
+  max-width: 100px;
+  max-height: 100px;
+  margin: 0 20px;
+}
+
+/* GRID de obras */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 80%;
+  margin: 0 auto 100px auto;
+}
+
+.work-item img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+/* ABOUT */
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: #d10202;
+  color: #ede9e1;
+  padding: 50px 0;
+}
+
+.about-left, .about-right {
+  width: 50%;
+  padding: 20px;
+}
+
+.about-left h2 {
+  font-family: "Dahlia", serif;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.about-left p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.about-right img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CONTACT */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: #ede9e1;
+  color: #000;
+  padding: 50px 0;
+}
+
+.contact-left, .contact-right {
+  width: 50%;
+  padding: 20px;
+}
+
+.contact-right h2 {
+  font-family: "Dahlia", serif;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.contact-menu {
+  list-style: none;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+.contact-menu li {
+  margin-bottom: 10px;
+}
+
+.contact-menu a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Responsive básico */
+@media (max-width: 900px) {
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-section, .contact-section {
+    flex-direction: column;
+  }
+  .about-left, .about-right,
+  .contact-left, .contact-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+  .name-title {
+    font-size: 40px;
+  }
+  .name-monigote {
+    max-width: 60px;
+    max-height: 60px;
+    margin: 0 10px;
+  }
+}

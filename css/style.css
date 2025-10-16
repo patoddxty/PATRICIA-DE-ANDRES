@@ -40,70 +40,22 @@ html, body{
   width:100%;
 }
 
-/* --------------- PORTADA HEADER --------------- */
-.cover-header .header-inner{
-  justify-content:center;
-  height: var(--header-height);
-}
-
-.cover-header .header-center{
-  font-weight:600;
-  letter-spacing:2px;
-  font-size:14px;
-  white-space: nowrap; /* evita que se rompa el texto */
-}
-
-/* --------------- PORTADA SECCIÓN --------------- */
-.cover-section{
-  position:relative;
-  min-height:40vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding-top: var(--header-height);
-  background-image: url('../img/cover-background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.cover-overlay{
-  position:absolute;
-  inset:0;
-  background: rgba(237,233,225,0.4);
-  z-index:1;
-}
-
-.cover-portfolio-link{
-  position:relative;
-  z-index:2;
-  display:inline-block;
-}
-.portfolio-badge{
-  max-width:90vw;
-  width:900px;
-  height:auto;
-}
-
-/* --------------- PORTFOLIO HEADER --------------- */
-.portfolio-header .header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  height: var(--header-height);
-}
-
-.header-left{
+/* HEADER PORTFOLIO */
+.portfolio-header .header-left,
+.portfolio-header .header-right{
   display:flex;
   align-items:center;
   gap:12px;
 }
 
-/* iconos con filtro color #D10202 y hover negro */
+.header-center{
+  flex:0; /* centro vacío */
+}
+
+/* ICONOS */
 .icon-sm img{
   width:24px;
   height:24px;
-  display:block;
   filter: invert(21%) sepia(94%) saturate(6349%) hue-rotate(0deg) brightness(95%) contrast(101%);
   transition: filter 0.25s ease;
 }
@@ -112,17 +64,7 @@ html, body{
   filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
 }
 
-.header-center{
-  flex:0; /* centro vacío en portfolio */
-}
-
-.header-right{
-  display:flex;
-  align-items:center;
-  gap:16px;
-}
-
-/* enlaces About y Contact en color de botón */
+/* ENLACES HEADER */
 .header-right .btn-link{
   font-weight:300;
   font-size:14px;
@@ -131,7 +73,7 @@ html, body{
   padding:6px 8px;
 }
 
-/* --------------- TÍTULO PRINCIPAL --------------- */
+/* TÍTULO PRINCIPAL */
 .title-section{
   padding-top: calc(var(--header-height) + 60px);
   padding-bottom:40px;
@@ -146,20 +88,19 @@ html, body{
   gap:20px;
   flex-wrap:nowrap;
   line-height:1;
-  font-family: Georgia, serif; /* cambiado a Georgia Bold */
-  font-weight: bold;           /* bold */
+  font-family: Georgia, serif;
+  font-weight:bold;
   font-size:66px;
   color: var(--text-main);
 }
 
 .title-avatar{
   width:auto;
-  height:500px; /* altura fija */
+  height:500px;
   object-fit: contain;
-  display:inline-block;
 }
 
-/* --------------- GRID DE OBRAS --------------- */
+/* GRID DE OBRAS */
 .works-section{
   padding:40px 24px;
   max-width:1200px;
@@ -174,15 +115,15 @@ html, body{
 }
 
 .work-item{
-  width:320px;
-  height:320px;
+  width:360px;
+  height:240px;
   overflow:hidden;
 }
 
 .work-item img{
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit: cover;
   display:block;
   transition: transform .35s ease, box-shadow .35s ease;
 }
@@ -190,114 +131,3 @@ html, body{
 .work-item:hover img{
   transform: scale(1.03);
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-}
-
-/* --------------- BLOQUE ABOUT --------------- */
-.about-section{
-  background: var(--accent);
-  color: var(--text-on-accent);
-  padding:60px 20px;
-}
-
-.about-inner{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  gap:24px;
-  align-items:stretch;
-}
-
-.about-left, .about-right{
-  box-sizing:border-box;
-  padding:24px;
-}
-
-.about-left{
-  flex:1 1 50%;
-}
-
-.about-right{
-  flex:0 0 auto; /* no se estira */
-}
-
-.about-title{
-  font-family: Georgia, serif; /* cambiado a Georgia Bold */
-  font-weight: bold;
-  font-size:56px;
-  margin:0 0 20px 0;
-}
-
-.about-text p{
-  margin:8px 0;
-  line-height:1.45;
-}
-
-.about-right img.about-image{
-  width:960px;
-  height:1080px;
-  object-fit:contain;
-  display:block;
-}
-
-/* --------------- BLOQUE CONTACT --------------- */
-.contact-section{
-  background: var(--main-bg);
-  color: var(--text-main);
-  padding:60px 20px;
-}
-
-.contact-inner{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  gap:24px;
-  align-items:stretch;
-}
-
-.contact-left{
-  flex:0 0 auto;
-  padding:24px;
-}
-
-.contact-left img.contact-image{
-  width:960px;
-  height:1080px;
-  object-fit:contain;
-  display:block;
-}
-
-.contact-right{
-  flex:1 1 50%;
-  padding:24px;
-}
-
-.contact-title{
-  font-family: Georgia, serif; /* cambiado a Georgia Bold */
-  font-weight: bold;
-  font-size:48px;
-  margin:0 0 20px 0;
-}
-
-.contact-menu li{
-  margin:8px 0;
-}
-
-.contact-menu a{
-  color:var(--text-main);
-  text-decoration:underline;
-}
-
-/* --------------- RESPONSIVE --------------- */
-@media (max-width:900px){
-  .name-title{ font-size:42px; flex-direction:column; gap:12px; }
-  .title-avatar{ height:350px; }
-  .works-grid{ grid-template-columns: repeat(2, 1fr); }
-  .work-item{ width:100%; height:0; padding-bottom:100%; }
-  .about-inner, .contact-inner{ flex-direction:column; }
-}
-
-@media (max-width:520px){
-  .works-grid{ grid-template-columns: 1fr; }
-  .work-item{ width:100%; height:0; padding-bottom:100%; }
-  .name-title{ font-size:34px; }
-}

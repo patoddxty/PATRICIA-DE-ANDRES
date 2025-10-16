@@ -1,13 +1,11 @@
-/* ----------------- VARIABLES ----------------- */
 :root{
   --main-bg: #EDE9E1;
   --accent: #D10202;
   --text-main: #000000;
   --text-on-accent: #EDE9E1;
-  --header-height: 72px; /* altura del header */
+  --header-height: 72px;
 }
 
-/* ----------------- FUENTES ----------------- */
 @font-face {
   font-family: "Dahlia";
   src: url("../fonts/dahlia-medium.woff2") format("woff2");
@@ -19,24 +17,17 @@
 html, body{
   height:100%;
   margin:0;
-  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: var(--text-main);
   background: var(--main-bg);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
 }
 
-/* ----------------- HEADER ----------------- */
 .site-header{
   position:fixed;
   top:0;
   left:0;
   right:0;
-  height:var(--header-height);
   z-index:60;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 }
 
 .header-inner{
@@ -50,53 +41,26 @@ html, body{
   box-sizing:border-box;
 }
 
-/* Cover header: title centered */
-.header-cover .header-center{
-  font-family: "Montserrat", sans-serif;
-  font-weight:600;
-  letter-spacing:2px;
-  font-size:14px;
-  text-align:center;
-}
-
-/* Full header: left icons and right links */
-.header-full .header-left,
-.header-full .header-right{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
 .header-underline{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
   height:1px;
   background: currentColor;
   opacity:0.15;
+  width:100%;
 }
 
-/* iconos */
-.icon img{ height:18px; width:auto; display:block; }
-.icon { display:inline-block; }
-.icon-sm img{ width:24px; height:24px; display:block; }
+/* --------------- PORTADA HEADER --------------- */
+.cover-header .header-inner{
+  justify-content:center;
+  height: var(--header-height);
+}
 
-/* nav links */
-.btn-link{
-  font-family: "Montserrat", sans-serif;
-  font-weight:300;
+.cover-header .header-center{
+  font-weight:600;
+  letter-spacing:2px;
   font-size:14px;
-  text-decoration:none;
-  color:var(--text-main);
-  padding:6px 8px;
 }
 
-/* ----------------- PORTADA ----------------- */
-.cover-body, .cover-main{
-  min-height:50vh;
-}
-
+/* --------------- PORTADA SECCIÓN --------------- */
 .cover-section{
   position:relative;
   min-height:100vh;
@@ -121,7 +85,6 @@ html, body{
   position:relative;
   z-index:2;
   display:inline-block;
-  cursor:pointer;
 }
 .portfolio-badge{
   max-width:90vw;
@@ -129,18 +92,48 @@ html, body{
   height:auto;
 }
 
-/* asegurar que el header quede encima */
-.site-header, .site-header * { z-index: 10; }
-
-/* ----------------- PORTFOLIO ----------------- */
-.portfolio-body{
-  background: var(--main-bg);
+/* --------------- PORTFOLIO HEADER --------------- */
+.portfolio-header .header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height: var(--header-height);
 }
 
-/* TÍTULO principal: Patricia [avatar] de Andrés */
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.header-center{
+  flex:0;
+}
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.icon-sm img{
+  width:24px;
+  height:24px;
+  display:block;
+}
+
+.btn-link{
+  font-weight:300;
+  font-size:14px;
+  text-decoration:none;
+  color: var(--text-main);
+  padding:6px 8px;
+}
+
+/* --------------- TÍTULO PRINCIPAL --------------- */
 .title-section{
   padding-top: calc(var(--header-height) + 60px);
-  padding-bottom: 40px;
+  padding-bottom:40px;
   text-align:center;
 }
 
@@ -152,10 +145,10 @@ html, body{
   gap:20px;
   flex-wrap:nowrap;
   line-height:1;
-  font-family: "Dahlia", "Playfair Display", serif;
+  font-family: "Dahlia", serif;
   font-weight:500;
   font-size:66px;
-  color:var(--text-main);
+  color: var(--text-main);
 }
 
 .title-avatar{
@@ -164,7 +157,7 @@ html, body{
   display:inline-block;
 }
 
-/* ----------------- GRID DE OBRAS (CUADRADO) ----------------- */
+/* --------------- GRID DE OBRAS --------------- */
 .works-section{
   padding:40px 24px;
   max-width:1200px;
@@ -197,7 +190,7 @@ html, body{
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
-/* ----------------- ABOUT ----------------- */
+/* --------------- BLOQUE ABOUT --------------- */
 .about-section{
   background: var(--accent);
   color: var(--text-on-accent);
@@ -219,28 +212,17 @@ html, body{
 }
 
 .about-title{
-  font-family: "Dahlia", "Playfair Display", serif;
+  font-family:"Dahlia", serif;
   font-size:56px;
   margin:0 0 20px 0;
-  color:var(--text-on-accent);
 }
 
 .about-text p{
   margin:8px 0;
   line-height:1.45;
-  color:var(--text-on-accent);
-  font-family: "Montserrat", sans-serif;
-  font-weight:300;
 }
 
-.about-image{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-/* ----------------- CONTACT ----------------- */
+/* --------------- BLOQUE CONTACT --------------- */
 .contact-section{
   background: var(--main-bg);
   color: var(--text-main);
@@ -261,26 +243,18 @@ html, body{
   padding:24px;
 }
 
-.contact-image{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
 .contact-title{
-  font-family: "Dahlia", "Playfair Display", serif;
+  font-family:"Dahlia", serif;
   font-size:48px;
   margin:0 0 20px 0;
-  color:var(--text-main);
 }
 
-.contact-menu p{ margin: 8px 0; font-weight:400; }
+.contact-menu p{ margin: 8px 0; }
 .contact-menu ul{ padding-left:18px; }
 .contact-menu a{ color:var(--text-main); text-decoration:underline; }
 
-/* ----------------- RESPONSIVE ----------------- */
-@media (max-width: 900px){
+/* --------------- RESPONSIVE --------------- */
+@media (max-width:900px){
   .name-title{ font-size:42px; flex-direction:column; gap:12px; }
   .title-avatar{ height:120px; }
   .works-grid{ grid-template-columns: repeat(2, 1fr); }
@@ -288,10 +262,8 @@ html, body{
   .about-inner, .contact-inner{ flex-direction:column; }
 }
 
-@media (max-width: 520px){
+@media (max-width:520px){
   .works-grid{ grid-template-columns: 1fr; }
   .work-item{ width:100%; height:0; padding-bottom:100%; }
-  .header-inner{ padding:0 12px; }
-  .header-underline{ opacity:0.12; }
   .name-title{ font-size:34px; }
 }

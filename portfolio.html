@@ -65,22 +65,7 @@
           <p>Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
           <p>Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.</p>
           <p>Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.</p>
-          <p>Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.</p>
-          <p>Pellentesque congue. Ut in risus volutpat libero pharetra tempor.</p>
-          <p>Cras vestibulum bibendum augue. Praesent egestas leo in pede.</p>
-          <p>Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.</p>
-          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-          <p>Nulla facilisi. Sed lectus. Integer euismod lacus luctus magna.</p>
-          <p>Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam.</p>
-          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-          <p>Integer euismod lacus luctus magna.</p>
-          <p>Quisque cursus, metus vitae pharetra auctor.</p>
-          <p>Sem massa mattis sem, at interdum magna augue eget diam.</p>
-          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-          <p>Integer euismod lacus luctus magna.</p>
-          <p>Quisque cursus, metus vitae pharetra auctor.</p>
-          <p>Sem massa mattis sem, at interdum magna augue eget diam.</p>
-          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+          <!-- Continúa tu texto de About -->
         </div>
       </div>
       <div class="about-right">
@@ -97,11 +82,18 @@
       </div>
       <div class="contact-right">
         <h2 class="contact-title">Contact</h2>
-        <ul class="contact-menu">
-          <li>Email: <a href="mailto:tu@correo.com">tu@correo.com</a></li>
-          <li>Behance: <a href="https://behance.net/">behance.net/tuusuario</a></li>
-          <li>LinkedIn: <a href="https://linkedin.com/">linkedin.com/in/tuusuario</a></li>
-        </ul>
+        <form class="contact-form" action="mailto:patriciadeandres00@gmail.com" method="post" enctype="text/plain">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Correo:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
       </div>
     </div>
   </section>

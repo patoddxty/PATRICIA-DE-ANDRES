@@ -60,7 +60,7 @@ html, body{
   display:flex;
   align-items:center;
   justify-content:center;
-  padding-top: var(--header-height);
+  padding-top: 200px;
   background-image: url('../img/cover-background.jpg');
   background-size: cover;
   background-position: center;

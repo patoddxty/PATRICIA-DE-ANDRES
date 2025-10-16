@@ -56,7 +56,7 @@ html, body{
 /* --------------- PORTADA SECCIÓN --------------- */
 .cover-section{
   position:relative;
-  min-height:100vh;
+  min-height:40vh;
   display:flex;
   align-items:center;
   justify-content:center;

@@ -6,7 +6,6 @@
   --header-height: 72px;
 }
 
-/* RESET Y BASE */
 html, body{
   height:100%;
   margin:0;
@@ -15,7 +14,6 @@ html, body{
   background: var(--main-bg);
 }
 
-/* HEADER GENERAL */
 .site-header{
   position:fixed;
   top:0;
@@ -42,59 +40,70 @@ html, body{
   width:100%;
 }
 
-/* PORTADA: menu centrado */
-.header-cover .header-center{
-  font-family: Georgia, serif;
-  font-weight:bold;
-  font-size:24px;
-  color: var(--text-main);
-  text-align:center;
+/* --------------- PORTADA HEADER --------------- */
+.cover-header .header-inner{
+  justify-content:center;
+  height: var(--header-height);
 }
 
-/* PORTADA overlay y logo */
+.cover-header .header-center{
+  font-weight:600;
+  letter-spacing:2px;
+  font-size:14px;
+  white-space: nowrap; /* evita que se rompa el texto */
+}
+
+/* --------------- PORTADA SECCIÓN --------------- */
 .cover-section{
   position:relative;
-  width:100%;
-  height:100vh;
-  background: url("../img/cover-background.jpg") center/cover no-repeat;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding-top: var(--header-height);
+  background-image: url('../img/cover-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .cover-overlay{
   position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   background: rgba(237,233,225,0.4);
+  z-index:1;
 }
 
-.cover-logo{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-  cursor:pointer;
-  max-width:900px;
-  width:80%;
+.cover-portfolio-link{
+  position:relative;
+  z-index:2;
+  display:inline-block;
+}
+.portfolio-badge{
+  max-width:90vw;
+  width:900px;
   height:auto;
 }
 
-/* HEADER PORTFOLIO */
-.portfolio-header .header-left,
-.portfolio-header .header-right{
+/* --------------- PORTFOLIO HEADER --------------- */
+.portfolio-header .header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height: var(--header-height);
+}
+
+.header-left{
   display:flex;
   align-items:center;
   gap:12px;
 }
 
-.header-center{
-  flex:0; /* centro vacío */
-}
-
-/* ICONOS */
+/* iconos con filtro color #D10202 y hover negro */
 .icon-sm img{
   width:24px;
   height:24px;
+  display:block;
   filter: invert(21%) sepia(94%) saturate(6349%) hue-rotate(0deg) brightness(95%) contrast(101%);
   transition: filter 0.25s ease;
 }
@@ -103,7 +112,17 @@ html, body{
   filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
 }
 
-/* ENLACES HEADER */
+.header-center{
+  flex:0; /* centro vacío en portfolio */
+}
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+/* enlaces About y Contact en color de botón */
 .header-right .btn-link{
   font-weight:300;
   font-size:14px;
@@ -112,7 +131,7 @@ html, body{
   padding:6px 8px;
 }
 
-/* TÍTULO PRINCIPAL PORTFOLIO */
+/* --------------- TÍTULO PRINCIPAL --------------- */
 .title-section{
   padding-top: calc(var(--header-height) + 60px);
   padding-bottom:40px;
@@ -127,19 +146,20 @@ html, body{
   gap:20px;
   flex-wrap:nowrap;
   line-height:1;
-  font-family: Georgia, serif;
-  font-weight:bold;
+  font-family: Georgia, serif; /* cambiado a Georgia Bold */
+  font-weight: bold;           /* bold */
   font-size:66px;
   color: var(--text-main);
 }
 
 .title-avatar{
   width:auto;
-  height:500px;
+  height:500px; /* altura fija */
   object-fit: contain;
+  display:inline-block;
 }
 
-/* GRID DE OBRAS */
+/* --------------- GRID DE OBRAS --------------- */
 .works-section{
   padding:40px 24px;
   max-width:1200px;
@@ -154,15 +174,15 @@ html, body{
 }
 
 .work-item{
-  width:360px;
-  height:240px;
+  width:320px;
+  height:320px;
   overflow:hidden;
 }
 
 .work-item img{
   width:100%;
   height:100%;
-  object-fit: cover;
+  object-fit:cover;
   display:block;
   transition: transform .35s ease, box-shadow .35s ease;
 }
@@ -172,7 +192,7 @@ html, body{
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
-/* BLOQUE ABOUT */
+/* --------------- BLOQUE ABOUT --------------- */
 .about-section{
   background: var(--accent);
   color: var(--text-on-accent);
@@ -193,15 +213,15 @@ html, body{
 }
 
 .about-left{
-  flex:1; /* izquierda texto */
+  flex:1 1 50%;
 }
 
 .about-right{
-  flex:1; /* derecha imagen */
+  flex:0 0 auto; /* no se estira */
 }
 
 .about-title{
-  font-family: Georgia, serif;
+  font-family: Georgia, serif; /* cambiado a Georgia Bold */
   font-weight: bold;
   font-size:56px;
   margin:0 0 20px 0;
@@ -213,13 +233,13 @@ html, body{
 }
 
 .about-right img.about-image{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+  width:960px;
+  height:1080px;
+  object-fit:contain;
   display:block;
 }
 
-/* BLOQUE CONTACT */
+/* --------------- BLOQUE CONTACT --------------- */
 .contact-section{
   background: var(--main-bg);
   color: var(--text-main);
@@ -234,84 +254,50 @@ html, body{
   align-items:stretch;
 }
 
-.contact-left, .contact-right{
-  box-sizing:border-box;
+.contact-left{
+  flex:0 0 auto;
   padding:24px;
 }
 
-.contact-left{
-  flex:1; /* imagen izquierda */
-}
-
 .contact-left img.contact-image{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+  width:960px;
+  height:1080px;
+  object-fit:contain;
   display:block;
 }
 
 .contact-right{
-  flex:1; /* formulario derecha */
+  flex:1 1 50%;
+  padding:24px;
 }
 
 .contact-title{
-  font-family: Georgia, serif;
+  font-family: Georgia, serif; /* cambiado a Georgia Bold */
   font-weight: bold;
   font-size:48px;
   margin:0 0 20px 0;
 }
 
-/* FORMULARIO CONTACT */
-.contact-form{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  max-width:500px;
+.contact-menu li{
+  margin:8px 0;
 }
 
-.contact-form label{
-  font-weight:bold;
-  font-size:14px;
+.contact-menu a{
+  color:var(--text-main);
+  text-decoration:underline;
 }
 
-.contact-form input,
-.contact-form textarea{
-  padding:8px;
-  font-size:14px;
-  border:1px solid #ccc;
-  border-radius:4px;
-  width:100%;
-  box-sizing:border-box;
-  font-family: "Montserrat", sans-serif;
-}
-
-.contact-form button{
-  padding:10px 16px;
-  background: var(--accent);
-  color:#fff;
-  border:none;
-  border-radius:4px;
-  cursor:pointer;
-  font-weight:bold;
-  transition: background 0.25s ease;
-}
-
-.contact-form button:hover{
-  background: #000000;
-}
-
-/* RESPONSIVE */
+/* --------------- RESPONSIVE --------------- */
 @media (max-width:900px){
   .name-title{ font-size:42px; flex-direction:column; gap:12px; }
   .title-avatar{ height:350px; }
   .works-grid{ grid-template-columns: repeat(2, 1fr); }
-  .work-item{ width:100%; height:0; padding-bottom:66.66%; }
+  .work-item{ width:100%; height:0; padding-bottom:100%; }
   .about-inner, .contact-inner{ flex-direction:column; }
 }
 
 @media (max-width:520px){
   .works-grid{ grid-template-columns: 1fr; }
-  .work-item{ width:100%; height:0; padding-bottom:66.66%; }
+  .work-item{ width:100%; height:0; padding-bottom:100%; }
   .name-title{ font-size:34px; }
 }
-

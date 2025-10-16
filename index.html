@@ -1,44 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Patricia de Andrés — Inicio</title>
-
-  <!-- Fonts: Montserrat (cuerpo). Dahlia: @font-face en CSS si subes los archivos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patricia de Andrés — Portada</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="cover-body">
+<body>
 
-  <!-- Header / Menú fijo (portada) -->
-  <header class="site-header">
-    <div class="header-inner header-cover">
-      <div class="header-left">
-      <div class="header-center">PATRICIA DE ANDRÉS</div>
-      <div class="header-right">
-        <a href="mailto:patriciadeandres00@gmail.com" class="icon" aria-label="Email"><img src="img/icon-mail.png" alt="mail"></a>
-        <a href="https://www.behance.net/patricideandr/" class="icon" target="_blank" rel="noopener"><img src="img/icon-behance.png" alt="Behance"></a>
-        <a href="https://www.linkedin.com/in/patricia-de-andres-gonzalez/" class="icon" target="_blank" rel="noopener"><img src="img/icon-linkedin.png" alt="LinkedIn"></a>
-      </div>
-    </div>
-    <div class="header-underline"></div>
-  </header>
+<header class="site-header cover-header">
+  <div class="header-inner">
+    <div class="header-center">PATRICIA DE ANDRÉS</div>
+  </div>
+  <div class="header-underline"></div>
+</header>
 
-  <!-- COVER -->
-  <main class="cover-main">
-    <section id="cover" class="cover-section">
-      <!-- background-image via CSS (img/cover-background.jpg or .png) -->
-      <div class="cover-overlay"></div>
+<main>
+  <section class="cover-section">
+    <div class="cover-overlay"></div>
+    <a href="portfolio.html" class="cover-portfolio-link">
+      <img src="img/cover-logo.png" alt="PORTFOLIO" class="portfolio-badge">
+    </a>
+  </section>
+</main>
 
-      <!-- Logo entero clicable hacia portfolio.html -->
-      <a href="portfolio.html" class="cover-portfolio-link" id="portfolioLink" aria-label="Entrar al portfolio">
-        <img src="img/cover-logo.png" alt="PORTFOLIO" class="portfolio-badge" width="900" height="400">
-      </a>
-    </section>
-  </main>
-
-  <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

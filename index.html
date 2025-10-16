@@ -3,108 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Patricia de Andrés — Portfolio</title>
-
-  <!-- Google font: Montserrat (Light) -->
+  <title>Patricia de Andrés — Inicio</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
-  <!-- Header / Menú fijo -->
+
+  <!-- Header para portada -->
   <header class="site-header">
-    <!-- Variant A: header for cover (center name + right icons) -->
     <div class="header-inner header-cover">
       <div class="header-center">PATRICIA DE ANDRÉS</div>
       <div class="header-right">
-        <a href="mailto:tu@correo.com" class="icon" aria-label="Email"><img src="img/icon-mail.png" alt="mail"></a>
+        <a href="mailto:tu@correo.com" class="icon"><img src="img/icon-mail.png" alt="mail"></a>
         <a href="https://behance.net/" class="icon" target="_blank" rel="noopener"><img src="img/icon-behance.png" alt="Behance"></a>
         <a href="https://linkedin.com/" class="icon" target="_blank" rel="noopener"><img src="img/icon-linkedin.png" alt="LinkedIn"></a>
       </div>
     </div>
-
-    <!-- Variant B: header for full (left icons + right About/Contact) -->
-    <div class="header-inner header-full">
-      <div class="header-left">
-        <a href="https://behance.net/" class="icon" target="_blank" rel="noopener"><img src="img/icon-behance.png" alt="Behance"></a>
-        <a href="https://linkedin.com/" class="icon" target="_blank" rel="noopener"><img src="img/icon-linkedin.png" alt="LinkedIn"></a>
-      </div>
-      <div class="header-center center-empty"></div>
-      <nav class="header-right">
-        <a class="btn-link" href="#about">About</a>
-        <a class="btn-link" href="#contact">Contact</a>
-      </nav>
-    </div>
-
     <div class="header-underline"></div>
   </header>
 
-  <!-- COVER (PORTADA) -->
   <main>
     <section id="cover" class="cover-section">
       <div class="cover-overlay"></div>
-      <a href="#full" class="cover-portfolio-link" id="portfolioLink">
+      <!-- En vez de #full, ahora va a portfolio.html -->
+      <a href="portfolio.html" class="cover-portfolio-link">
         <img src="img/portfolio-badge.png" alt="PORTFOLIO" class="portfolio-badge">
       </a>
     </section>
-
-    <!-- FULL: página principal -->
-    <section id="full" class="full-section">
-      <div class="container">
-        <div class="logo-slot">
-          <img src="img/logo-square.png" alt="Logo" class="logo-img">
-        </div>
-
-        <h1 class="name-title">
-          <span class="name-left">Patricia</span>
-          <img src="img/monigote.png" alt="monigote" class="name-monigote">
-          <span class="name-right">de Andrés</span>
-        </h1>
-
-        <section class="works-grid" id="works">
-          <a href="obra1.html" class="work-item"><img src="img/SNF-1.jpg" alt="Obra 1"></a>
-          <a href="obra2.html" class="work-item"><img src="img/work2.jpg" alt="Obra 2"></a>
-          <a href="obra3.html" class="work-item"><img src="img/work3.jpg" alt="Obra 3"></a>
-          <a href="obra4.html" class="work-item"><img src="img/work4.jpg" alt="Obra 4"></a>
-          <a href="obra5.html" class="work-item"><img src="img/work5.jpg" alt="Obra 5"></a>
-          <a href="obra6.html" class="work-item"><img src="img/work6.jpg" alt="Obra 6"></a>
-          <a href="obra7.html" class="work-item"><img src="img/work7.jpg" alt="Obra 7"></a>
-          <a href="obra8.html" class="work-item"><img src="img/work8.jpg" alt="Obra 8"></a>
-          <a href="obra9.html" class="work-item"><img src="img/work9.jpg" alt="Obra 9"></a>
-        </section>
-
-        <section id="about" class="about-section">
-          <div class="about-left">
-            <h2>About</h2>
-            <div class="about-text">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.</p>
-              <p>Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.</p>
-              <p>Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede.</p>
-            </div>
-          </div>
-          <div class="about-right">
-            <img src="img/about-photo.jpg" alt="About image">
-          </div>
-        </section>
-
-        <section id="contact" class="contact-section">
-          <div class="contact-left">
-            <img src="img/contact-photo.jpg" alt="Contact image">
-          </div>
-          <div class="contact-right">
-            <h2>Contact</h2>
-            <ul class="contact-menu">
-              <li>Email: <a href="mailto:tu@correo.com">tu@correo.com</a></li>
-              <li>Behance: <a href="https://behance.net/">behance.net/tuusuario</a></li>
-              <li>LinkedIn: <a href="https://linkedin.com/">linkedin.com/in/tuusuario</a></li>
-            </ul>
-          </div>
-        </section>
-      </div>
-    </section>
   </main>
 
-  <script src="js/main.js"></script>
 </body>
 </html>

@@ -106,8 +106,21 @@ html, body{
   gap:12px;
 }
 
+/* iconos con filtro color #D10202 y hover negro */
+.icon-sm img{
+  width:24px;
+  height:24px;
+  display:block;
+  filter: invert(21%) sepia(94%) saturate(6349%) hue-rotate(0deg) brightness(95%) contrast(101%);
+  transition: filter 0.25s ease;
+}
+
+.icon-sm img:hover{
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
 .header-center{
-  flex:0;
+  flex:0; /* centro vacío en portfolio */
 }
 
 .header-right{
@@ -116,17 +129,12 @@ html, body{
   gap:16px;
 }
 
-.icon-sm img{
-  width:24px;
-  height:24px;
-  display:block;
-}
-
-.btn-link{
+/* enlaces About y Contact en color de botón */
+.header-right .btn-link{
   font-weight:300;
   font-size:14px;
   text-decoration:none;
-  color: var(--text-main);
+  color: var(--accent);
   padding:6px 8px;
 }
 
@@ -249,9 +257,14 @@ html, body{
   margin:0 0 20px 0;
 }
 
-.contact-menu p{ margin: 8px 0; }
-.contact-menu ul{ padding-left:18px; }
-.contact-menu a{ color:var(--text-main); text-decoration:underline; }
+.contact-menu li{
+  margin:8px 0;
+}
+
+.contact-menu a{
+  color:var(--text-main);
+  text-decoration:underline;
+}
 
 /* --------------- RESPONSIVE --------------- */
 @media (max-width:900px){

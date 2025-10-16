@@ -174,8 +174,8 @@ html, body{
 }
 
 .work-item{
-  width:320px;
-  height:320px;
+  width: 360px;  /* un poco más ancho */
+  height: 240px; /* proporcional para rectángulo */
   overflow:hidden;
 }
 
@@ -233,10 +233,11 @@ html, body{
 }
 
 .about-right img.about-image{
-  width:960px;
-  height:1080px;
-  object-fit:contain;
+  width: 100%;
+  height: auto;
+  max-width: 50%;
   display:block;
+  object-fit:cover;
 }
 
 /* --------------- BLOQUE CONTACT --------------- */
@@ -260,10 +261,11 @@ html, body{
 }
 
 .contact-left img.contact-image{
-  width:960px;
-  height:1080px;
-  object-fit:contain;
+  width: 100%;
+  height: auto;
+  max-width: 50%; /* se asegura que ocupe la mitad */
   display:block;
+  object-fit:cover;
 }
 
 .contact-right{
@@ -293,7 +295,15 @@ html, body{
   .title-avatar{ height:350px; }
   .works-grid{ grid-template-columns: repeat(2, 1fr); }
   .work-item{ width:100%; height:0; padding-bottom:100%; }
-  .about-inner, .contact-inner{ flex-direction:column; }
+  .about-inner, .contact-inner {
+  display: flex;
+  align-items:stretch;
+}
+.about-left, .contact-right {
+  flex:1; /* ocupa la otra mitad */
+}
+.about-right, .contact-left {
+  flex:1; /* ocupa la mitad de la página */
 }
 
 @media (max-width:520px){

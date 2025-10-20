@@ -12,8 +12,10 @@ html, body{
   font-family: "Montserrat", sans-serif;
   color: var(--text-main);
   background: var(--main-bg);
+  overflow-x: hidden;
 }
 
+/* --------------- HEADER GENERAL --------------- */
 .site-header{
   position:fixed;
   top:0;
@@ -31,6 +33,11 @@ html, body{
   justify-content:space-between;
   padding:0 20px;
   box-sizing:border-box;
+  height: var(--header-height);
+  font-weight:600;
+  letter-spacing:2px;
+  font-size:14px;
+  white-space: nowrap;
 }
 
 .header-underline{
@@ -42,25 +49,26 @@ html, body{
 
 /* --------------- PORTADA HEADER --------------- */
 .cover-header .header-inner{
-  justify-content:center;
-  height: var(--header-height);
+  justify-content: space-between; /* izquierda/derecha */
 }
 
-.cover-header .header-center{
-  font-weight:600;
-  letter-spacing:2px;
+.cover-header .header-left{
   font-size:14px;
-  white-space: nowrap; /* evita que se rompa el texto */
+  white-space: nowrap;
+}
+
+.cover-header .header-right{
+  font-size:14px;
+  white-space: nowrap;
 }
 
 /* --------------- PORTADA SECCIÓN --------------- */
 .cover-section{
   position:relative;
-  min-height:100vh;
+  height: calc(100vh - var(--header-height));
   display:flex;
   align-items:center;
   justify-content:center;
-  padding-top: 200px;
   background-image: url('../img/cover-background.jpg');
   background-size: cover;
   background-position: center;
@@ -79,9 +87,9 @@ html, body{
   z-index:2;
   display:inline-block;
 }
+
 .portfolio-badge{
-  max-width:90vw;
-  width:900px;
+  max-width:60vw;  /* ajustable si lo quieres más grande o más pequeño */
   height:auto;
 }
 
@@ -113,7 +121,7 @@ html, body{
 }
 
 .header-center{
-  flex:0; /* centro vacío en portfolio */
+  flex:0;
 }
 
 .header-right{
@@ -122,7 +130,6 @@ html, body{
   gap:16px;
 }
 
-/* enlaces About y Contact en color de botón */
 .header-right .btn-link{
   font-weight:300;
   font-size:14px;
@@ -146,15 +153,15 @@ html, body{
   gap:20px;
   flex-wrap:nowrap;
   line-height:1;
-  font-family: Georgia, serif; /* cambiado a Georgia Bold */
-  font-weight: bold;           /* bold */
+  font-family: Georgia, serif;
+  font-weight: bold;
   font-size:66px;
   color: var(--text-main);
 }
 
 .title-avatar{
   width:auto;
-  height:500px; /* altura fija */
+  height:500px;
   object-fit: contain;
   display:inline-block;
 }
@@ -174,8 +181,8 @@ html, body{
 }
 
 .work-item{
-  width: 360px;  /* un poco más ancho */
-  height: 240px; /* proporcional para rectángulo */
+  width: 360px;
+  height: 240px;
   overflow:hidden;
 }
 
@@ -216,12 +223,8 @@ html, body{
   flex:1 1 50%;
 }
 
-.about-right{
-  flex:0 0 auto; /* no se estira */
-}
-
 .about-title{
-  font-family: Georgia, serif; /* cambiado a Georgia Bold */
+  font-family: Georgia, serif;
   font-weight: bold;
   font-size:56px;
   margin:0 0 20px 0;
@@ -233,10 +236,8 @@ html, body{
 }
 
 .about-right img.about-image{
-  width: 100%;
-  height: auto;
-  max-width: 50%;
-  display:block;
+  width:100%;
+  height:auto;
   object-fit:cover;
 }
 
@@ -255,26 +256,13 @@ html, body{
   align-items:stretch;
 }
 
-.contact-left{
-  flex:0 0 auto;
-  padding:24px;
-}
-
-.contact-left img.contact-image{
-  width: 100%;
-  height: auto;
-  max-width: 50%; /* se asegura que ocupe la mitad */
-  display:block;
-  object-fit:cover;
-}
-
-.contact-right{
-  flex:1 1 50%;
+.contact-left, .contact-right{
+  box-sizing:border-box;
   padding:24px;
 }
 
 .contact-title{
-  font-family: Georgia, serif; /* cambiado a Georgia Bold */
+  font-family: Georgia, serif;
   font-weight: bold;
   font-size:48px;
   margin:0 0 20px 0;
@@ -294,20 +282,30 @@ html, body{
   .name-title{ font-size:42px; flex-direction:column; gap:12px; }
   .title-avatar{ height:350px; }
   .works-grid{ grid-template-columns: repeat(2, 1fr); }
-  .work-item{ width:100%; height:0; padding-bottom:100%; }
+
+  .work-item{
+    width:100%;
+    height:0;
+    padding-bottom:100%;
+  }
+
   .about-inner, .contact-inner {
-  display: flex;
-  align-items:stretch;
-}
-.about-left, .contact-right {
-  flex:1; /* ocupa la otra mitad */
-}
-.about-right, .contact-left {
-  flex:1; /* ocupa la mitad de la página */
+    flex-direction:column;
+  }
 }
 
 @media (max-width:520px){
   .works-grid{ grid-template-columns: 1fr; }
-  .work-item{ width:100%; height:0; padding-bottom:100%; }
+
+  .work-item{
+    width:100%;
+    height:0;
+    padding-bottom:100%;
+  }
+
   .name-title{ font-size:34px; }
+
+  .portfolio-badge{
+    max-width:75vw;
+  }
 }

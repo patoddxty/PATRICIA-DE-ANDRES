@@ -26,7 +26,6 @@ html, body{
 
 .header-inner{
   width:100%;
-  max-width:1200px;
   margin:0 auto;
   display:flex;
   align-items:center;
@@ -48,8 +47,15 @@ html, body{
 }
 
 /* --------------- PORTADA HEADER --------------- */
-.cover-header .header-inner{
-  justify-content: space-between; /* izquierda/derecha */
+.cover-header .header-inner {
+  width: 100%;
+  margin: 0;
+  max-width: none;     /* ← elimina la restricción */
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .cover-header .header-left{

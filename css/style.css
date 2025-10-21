@@ -164,7 +164,7 @@ html, body{
   gap:20px;
   flex-wrap:nowrap;
   line-height:1;
-  font-family: Georgia, serif;
+  font-family: 'EB Garamond', serif;
   font-weight: bold;
   font-size:66px;
   color: var(--text-main);
@@ -235,7 +235,7 @@ html, body{
 }
 
 .about-title{
-  font-family: Georgia, serif;
+  font-family: 'EB Garamond', serif;
   font-weight: bold;
   font-size:56px;
   margin:0 0 20px 0;
@@ -273,7 +273,7 @@ html, body{
 }
 
 .contact-title{
-  font-family: Georgia, serif;
+  font-family: Georgia, serif;;
   font-weight: bold;
   font-size:48px;
   margin:0 0 20px 0;

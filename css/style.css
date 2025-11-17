@@ -20,13 +20,13 @@
 ------------------------------------------------------- */
 @font-face {
   font-family: "HAL Timezone";
-  src: url("../fonts/HAL-Timezone.otf") format("opentype");
+  src: url("../fonts/HALTimezoneUnlicensed-Regular.woff2) format("opentype");
   font-weight: normal;
 }
 
 @font-face {
   font-family: "HAL Grotesk";
-  src: url("../fonts/HAL-Grotesk.ttf") format("truetype");
+  src: url("../fonts/HALFourGroteskUnlicensed-Regular.woff2") format("truetype");
   font-weight: normal;
 }
 

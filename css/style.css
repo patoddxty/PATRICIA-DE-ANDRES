@@ -61,7 +61,7 @@ body{ font-family: var(--font-text), system-ui, -apple-system, "Segoe UI", Robot
 /* Usamos clamp para que sea responsivo y siempre grande */
 .site-title{
   font-family: var(--font-title);
-  color: var(--lilac);
+  color: var(--klein);
   font-weight: 700;
   margin: 0;
   line-height: 1;

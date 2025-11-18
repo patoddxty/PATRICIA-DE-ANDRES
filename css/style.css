@@ -278,7 +278,7 @@ body{
 .about-right {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   gap: 1rem;
 }
 

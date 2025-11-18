@@ -1,345 +1,420 @@
-/* ------------------------------------------------------
-   VARIABLES DE DISEÑO
-------------------------------------------------------- */
+/* ---------- VARIABLES ---------- */
 :root{
   --klein: #172FF1;
   --lilac: #8BA3F2;
   --sand: #D8DBEF;
   --night: #080B16;
 
-  --font-title: "HAL Timezone", sans-serif;
+  --font-title: "HAL Timezone", serif;
   --font-text: "HAL Grotesk", sans-serif;
+
+  --header-height: 500px;
 }
 
-/* ------------------------------------------------------
-   TIPOGRAFÍAS
-------------------------------------------------------- */
+/* ---------- FONTS (usa los archivos que subiste) ---------- */
 @font-face {
   font-family: "HAL Timezone";
-  src: url("../fonts/HAL-Timezone.otf") format("opentype");
+  src: url("../fonts/HALTimezoneUnlicensed-Regular.woff2") format("woff2");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
-
 @font-face {
   font-family: "HAL Grotesk";
-  src: url("../fonts/HAL-Grotesk.ttf") format("truetype");
+  src: url("../fonts/HALFourGroteskUnlicensed-Regular.woff2") format("woff2");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* ------------------------------------------------------
-   RESETEO GENERAL
-------------------------------------------------------- */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100%;
-  background: var(--sand);
-  font-family: var(--font-text);
-  color: var(--klein);
-  scroll-behavior: smooth;
-}
+/* ---------- RESET / BASE ---------- */
+*{ box-sizing: border-box; }
+html,body{ height:100%; margin:0; padding:0; background:var(--sand); color:var(--klein); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+body{ font-family: var(--font-text), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
 
-img {
-  display: block;
-  max-width: 100%;
-}
+/* ---------- HEADER (NO FIJO) ---------- */
+/* Estructura: <header class="site-header"><div class="header-inner"><div class="site-title">...</div><nav class="site-nav">...</nav></div></header> */
 
-/* ------------------------------------------------------
-   HEADER (NO FIJO) — 500px DE ALTO
-------------------------------------------------------- */
-header {
-  width: 100%;
-  height: 500px;
+.site-header{
+  width:100%;
+  height: var(--header-height); /* 500px */
   background: var(--night);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 0 20px;
 }
 
-/* Título principal */
-header h1 {
+/* header-inner en columna: título arriba, botones debajo, todo centrado */
+.header-inner{
+  width:100%;
+  max-width: 1600px; /* controla el ancho máximo del contenido, puedes ajustarlo */
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  gap: 18px;
+  text-align:center;
+}
+
+/* Site title centrado; ocupando ~2/3 del ancho visualmente */
+/* Usamos clamp para que sea responsivo y siempre grande */
+.site-title{
   font-family: var(--font-title);
   color: var(--lilac);
-  font-size: 8vw;               /* Escalable, ocupa 2/3 aprox */
-  margin: 0 0 20px 0;
-  text-align: center;
-  letter-spacing: 2px;
+  font-weight: 700;
+  margin: 0;
   line-height: 1;
+  /* font-size pensado para ocupar mucho espacio; ajusta si quieres exacto 2/3 */
+  font-size: clamp(42px, 7vw, 120px);
+  max-width: 66vw; /* visualmente limita a ~2/3 del viewport */
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* Botones del header */
-header .nav-buttons {
-  display: flex;
-  gap: 50px;
-  margin-top: 20px;
+/* NAV buttons: debajo del título, centrados y con espacio igual */
+.site-nav{
+  display:flex;
+  gap: 48px; /* espacio entre botones; ajusta si quieres */
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
-header .nav-buttons a {
+/* Botón estilo: sin fondo, sin borde, tipografía de título y color #8BA3F2 */
+.site-nav .nav-btn{
   font-family: var(--font-title);
-  font-size: 40px;
+  font-size: 40px;         /* tamaño grande como pediste */
   color: var(--lilac);
   text-decoration: none;
-  transition: opacity 0.25s ease;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: opacity .18s ease, transform .18s ease;
+  line-height: 1;
 }
 
-header .nav-buttons a:hover {
-  opacity: 0.6;
+/* hover discreto */
+.site-nav .nav-btn:hover{
+  opacity: 0.75;
+  transform: translateY(-4px);
 }
 
-/* ------------------------------------------------------
-   BANNER
-------------------------------------------------------- */
-.banner {
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
+/* ---------- BANNER ---------- */
+.banner{
+  width:100%;
+  height:250px; /* como pediste */
+  overflow:hidden;
+}
+.banner .banner-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ------------------------------------------------------
-   SECCIÓN 3D DESIGN
-------------------------------------------------------- */
-.section-3d {
-  width: 100%;
-  height: 900px;
+/* ---------- 3D DESIGN SECTION ---------- */
+.panel-3d, .section-3d { /* permite usar cualquiera de los dos nombres */
+  width:100%;
   background: var(--night);
   color: var(--sand);
-  padding: 60px 40px;
+  padding: 40px 24px;
   box-sizing: border-box;
+  min-height: 900px;
 }
 
+/* subtítulos reducidos y centrados en 3D */
+.panel-3d .panel-subtitle,
 .section-3d h2 {
   font-family: var(--font-title);
-  text-align: center;
-  font-size: 60px; /* Reducido */
+  font-size: 48px; /* menor tamaño */
   color: var(--sand);
-  margin: 0 0 40px;
+  text-align: center; /* centrado en ancho de pantalla */
+  margin: 12px 0 28px;
 }
 
-/* Grid 3 imágenes */
-.three-grid {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
+/* gallery 3 items: centrado */
+.gallery-3d,
+.three-grid{
+  display:flex;
+  justify-content:center;
+  gap: 32px;
+  align-items:flex-start;
+  flex-wrap:wrap;
 }
 
-.three-grid .item {
+/* item */
+.gallery-3d .card,
+.three-grid .item{
   width: 500px;
   height: 600px;
-  overflow: hidden;
-  position: relative;
+  overflow:hidden;
+  position:relative;
+  border-radius:6px;
+  background:#111;
+  cursor:pointer;
 }
 
-.three-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .4s ease, opacity .4s ease;
+/* main image + hover image stacked */
+.card-img,
+.item img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition: transform .45s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
 }
 
-.three-grid .item:hover img.hover-img {
-  opacity: 1;
+/* hover alt image (put as .hover-img) */
+.card .hover-img,
+.item img.hover-img{
+  position:absolute;
+  top:0;
+  left:0;
+  opacity:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition: transform .45s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
+}
+
+/* on hover show hover-img and scale slightly */
+.card:hover .hover-img,
+.item:hover img.hover-img{
+  opacity:1;
   transform: scale(1.05);
 }
 
-.three-grid img.hover-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-
-/* Botón “See more” */
+/* see more button: menos padding, bordes más redondeados */
+.see-more,
 .see-more-btn {
-  display: block;
-  margin: 40px auto 0;
-  width: fit-content;
-  padding: 18px 32px; /* Menos padding */
+  display:inline-block;
   background: var(--sand);
-  border-radius: 16px; /* Más redondeado */
-  font-family: var(--font-title);
   color: var(--lilac);
-  font-size: 36px;
-  text-decoration: none;
-  transition: 0.3s ease;
+  text-decoration:none;
+  padding: 10px 18px;     /* menos padding */
+  border-radius: 24px;    /* más redondeado */
+  font-family: var(--font-title);
+  font-size: 22px;
+  margin: 28px auto 0;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.see-more:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-.see-more-btn:hover{
-  transform: scale(1.05);
-}
-
-/* ------------------------------------------------------
-   SECCIÓN 2D DESIGN
-------------------------------------------------------- */
-.section-2d {
-  width: 100%;
-  height: 900px;
+/* ---------- 2D DESIGN SECTION ---------- */
+.panel-2d, .section-2d {
+  width:100%;
   background: var(--sand);
-  padding: 60px 40px;
+  color: var(--night);
+  padding: 40px 24px;
   box-sizing: border-box;
+  min-height: 900px;
 }
 
+/* 2D subtitle: color klein y centrado */
+.panel-2d .panel-subtitle,
 .section-2d h2 {
   font-family: var(--font-title);
+  font-size: 48px; /* reducido */
+  color: var(--klein); /* #172FF1 */
   text-align: center;
-  font-size: 60px; /* Reducido */
-  color: var(--klein); /* Azul klein */
-  margin: 0 0 40px;
+  margin: 12px 0 28px;
 }
 
-/* 4 imágenes ocupando ancho completo */
-.four-grid {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+/* four-grid: 4 images that fill the width exactly */
+.gallery-2d,
+.four-grid{
+  display:flex;
   gap: 20px;
+  width:100%;
 }
 
-.four-grid .item {
-  flex: 1;
-  height: 530px;
+/* each card flexes equally to fill width; keeps aspect ratio via height */
+.gallery-2d .card,
+.four-grid .item{
+  flex: 1 1 0;
+  height: 530px; /* as requested */
   position: relative;
-  overflow: hidden;
+  overflow:hidden;
+  border-radius:6px;
 }
 
-.four-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .4s ease, opacity .4s ease;
+/* images fill their card but keep proportion via object-fit */
+.gallery-2d img,
+.four-grid img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition: transform .45s ease, opacity .25s ease;
 }
 
-.four-grid img.hover-img {
-  position: absolute;
-  top: 0; left: 0;
-  opacity: 0;
+/* hover alt image behavior (if you supply hover images as .hover-img) */
+.gallery-2d .card .hover-img,
+.four-grid .item img.hover-img{
+  position:absolute;
+  top:0; left:0;
+  opacity:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition: transform .45s ease, opacity .25s ease;
 }
-
-.four-grid .item:hover img.hover-img {
-  opacity: 1;
+.gallery-2d .card:hover .hover-img,
+.four-grid .item:hover img.hover-img{
+  opacity:1;
   transform: scale(1.04);
 }
 
-/* Botón “See more” con borde */
-.see-more-btn-2d {
-  display: block;
-  margin: 40px auto 0;
-  width: fit-content;
-  padding: 18px 32px;
-  border-radius: 16px;
+/* see more outline button for 2D (keeping style requested) */
+.see-more-2d,
+.see-more-btn-2d{
+  display:inline-block;
   background: var(--sand);
-  border: 1px solid var(--klein);
-  font-family: var(--font-title);
   color: var(--lilac);
-  font-size: 36px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.see-more-btn-2d:hover{
-  transform: scale(1.05);
-}
-
-/* ------------------------------------------------------
-   ABOUT SECTION
-------------------------------------------------------- */
-.about {
-  width: 100%;
-  height: 500px;
-  background: var(--night);
-  display: flex;
-  padding: 40px;
-  box-sizing: border-box;
-  gap: 40px;
-}
-
-/* Imagen = 50% exacto */
-.about .about-img {
-  width: 50%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Texto = 50% exacto */
-.about .about-text {
-  width: 50%;
-  color: var(--sand);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.about h3 {
+  border-radius: 24px;
+  padding: 10px 18px;
   font-family: var(--font-title);
-  font-size: 60px;
-  color: var(--klein);
-  margin: 0 0 20px;
+  font-size: 22px;
+  border: 1px solid var(--klein); /* 1px border */
+  margin: 28px auto 0;
+  text-decoration: none;
+}
+.see-more-2d:hover{ transform: translateY(-4px); }
+
+/* ---------- ABOUT (50% / 50%) ---------- */
+.about, .panel-about {
+  width:100%;
+  background: var(--night);
+  min-height: 500px;
+  display:flex;
+  align-items:stretch;
+  box-sizing:border-box;
 }
 
-.about p {
+/* left image half */
+.about .about-img,
+.panel-about .about-img {
+  width:50%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* right text half */
+.about .about-text,
+.panel-about .about-text {
+  width:50%;
+  padding: 48px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  box-sizing:border-box;
+}
+
+/* about title & paragraph sizes */
+.about .about-hero,
+.panel-about .about-hero {
+  font-family: var(--font-title);
+  font-size: clamp(36px, 6vw, 60px);
+  color: var(--klein);
+  margin: 0 0 18px 0;
+}
+
+.about .about-paragraph,
+.panel-about .about-paragraph {
   font-family: var(--font-text);
   font-size: 30px;
   color: #DEDEDE;
-  line-height: 1.4;
-  margin-bottom: 30px;
+  line-height:1.45;
 }
 
-.about .contact-btn {
-  width: fit-content;
-  padding: 18px 32px;
+/* contact button in about */
+.about .contact-btn,
+.panel-about .contact-btn {
+  display:inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  border-radius: 24px;
   background: var(--sand);
-  border-radius: 16px;
-  text-decoration: none;
   color: var(--lilac);
+  text-decoration:none;
   font-family: var(--font-title);
-  font-size: 36px;
-  transition: 0.3s ease;
+  font-size: 22px;
 }
 
-.about .contact-btn:hover{
-  transform: scale(1.05);
-}
-
-/* ------------------------------------------------------
-   SOCIAL SECTION
-------------------------------------------------------- */
-.social {
-  width: 100%;
-  height: 500px;
+/* ---------- SOCIAL ---------- */
+.social, .panel-social {
+  width:100%;
   background: var(--night);
-  padding: 60px 40px;
-  text-align: center;
-  box-sizing: border-box;
+  min-height:500px;
+  box-sizing:border-box;
+  padding: 40px 24px;
+  color: var(--sand);
+  text-align:center;
 }
 
-.social h3 {
+.social .social-title {
   font-family: var(--font-title);
-  font-size: 60px;
+  font-size: clamp(30px, 5vw, 60px);
   color: var(--klein);
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
+.social .social-icons {
+  display:flex;
+  justify-content:center;
+  gap: 60px;
+  align-items:center;
+  margin-top: 20px;
 }
 
-.social-icons img {
-  width: 50px;
-  height: 50px;
+.social .social-icons img {
+  width:50px;
+  height:50px;
+  object-fit:contain;
+  /* tint to lilac approximated with filter; SVG would be better */
   filter: brightness(0) saturate(100%) invert(68%) sepia(28%) saturate(556%) hue-rotate(187deg) brightness(97%) contrast(90%);
-  transition: transform .3s ease;
+  transition: transform .18s ease, filter .18s ease;
+}
+.social .social-icons img:hover{
+  transform: translateY(-6px);
+  filter: none;
 }
 
-.social-icons img:hover {
-  transform: scale(1.15);
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1200px){
+  .site-title{ font-size: clamp(36px, 9vw, 96px); max-width:70vw; }
+  .site-nav .nav-btn{ font-size: 32px; gap: 28px; }
+  .gallery-3d .card, .three-grid .item{ width: 420px; height: 520px; }
+  .gallery-2d .card, .four-grid .item{ height:420px; }
+}
+
+@media (max-width: 900px){
+  .header-inner{ gap:12px; padding: 24px; }
+  .site-title{ font-size: clamp(28px, 9vw, 64px); max-width:90vw; white-space: normal; }
+  .site-nav{ gap:16px; }
+  .site-nav .nav-btn{ font-size: 20px; }
+  .gallery-3d{ flex-direction: column; align-items:center; }
+  .three-grid .item{ width: 88vw; height: calc(88vw * 1.2); } /* keep approx aspect */
+  .gallery-2d{ flex-direction: column; gap:16px; }
+  .four-grid .item{ width:100%; height: calc(100vw * 0.7); }
+  .about{ flex-direction: column; min-height: auto; }
+  .about .about-img, .about .about-text{ width:100%; height:auto; }
+}
+
+@media (max-width: 520px){
+  .site-title{ font-size: clamp(20px, 8vw, 40px); }
+  .site-nav .nav-btn{ font-size: 18px; }
+  .banner{ height:160px; }
+  .panel-3d, .panel-2d{ padding: 28px 16px; }
+  .see-more, .see-more-2d{ font-size: 18px; padding: 8px 14px; border-radius: 18px; }
+  .gallery-3d .card, .three-grid .item{ width: 94vw; height: calc(94vw * 1.2); }
+  .four-grid .item{ height: calc(94vw * 0.9); }
 }

@@ -134,7 +134,7 @@ body{
 .panel-3d{
   width:100%;
   background: var(--night);
-  color: var(--sand);
+  color: var(--lilac);
   padding: 40px 24px;
   box-sizing:border-box;
 }

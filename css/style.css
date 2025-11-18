@@ -149,8 +149,8 @@ body{ font-family: var(--font-text), system-ui, -apple-system, "Segoe UI", Robot
 /* item */
 .gallery-3d .card,
 .three-grid .item{
-  width: 500px;
-  height: 600px;
+  width: 450px;
+  height: auto;
   overflow:hidden;
   position:relative;
   border-radius:6px;

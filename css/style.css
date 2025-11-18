@@ -1,423 +1,165 @@
-/* ---------- VARIABLES ---------- */
+/* Nuevo CSS basado en el mockup proporcionado */
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;font-family:"HAL Grotesk", sans-serif;background:#0A0C16;color:#D8DBEF;}
+
 :root{
-  --klein: #172FF1;
-  --lilac: #8BA3F2;
-  --sand: #D8DBEF;
-  --night: #080B16;
-
-  --font-title: "HAL Timezone", serif;
-  --font-text: "HAL Grotesk", sans-serif;
-
-  --header-height: 500px;
+  --night:#0A0C16;
+  --lilac:#C9CDE4;
+  --blue:#2437F3;
+  --font-title:"HAL Timezone", serif;
+  --font-text:"HAL Grotesk", sans-serif;
 }
 
-/* ---------- FONTS (usa los archivos que subiste) ---------- */
-@font-face {
-  font-family: "HAL Timezone";
-  src: url("../fonts/HALTimezoneUnlicensed-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "HAL Grotesk";
-  src: url("../fonts/HALFourGroteskUnlicensed-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ---------- RESET / BASE ---------- */
-*{ box-sizing: border-box; }
-html,body{ height:100%; margin:0; padding:0; background:var(--sand); color:var(--klein); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
-body{ font-family: var(--font-text), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-
-/* ---------- HEADER (NO FIJO) ---------- */
-/* Estructura: <header class="site-header"><div class="header-inner"><div class="site-title">...</div><nav class="site-nav">...</nav></div></header> */
-
+/* HEADER -------------------------------------------------- */
 .site-header{
-  width:100%;
-  height: var(--header-height); /* 500px */
-  background: var(--night);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding: 0 20px;
-}
-
-/* header-inner en columna: título arriba, botones debajo, todo centrado */
-.header-inner{
-  width:100%;
-  max-width: 1600px; /* controla el ancho máximo del contenido, puedes ajustarlo */
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content:center;
-  gap: 18px;
+  background:var(--night);
+  padding:40px 20px 20px;
   text-align:center;
 }
-
-/* Site title centrado; ocupando ~2/3 del ancho visualmente */
-/* Usamos clamp para que sea responsivo y siempre grande */
 .site-title{
-  font-family: var(--font-title);
-  color: var(--klein);
-  font-weight: 700;
-  margin: 0;
-  line-height: 1;
-  /* font-size pensado para ocupar mucho espacio; ajusta si quieres exacto 2/3 */
-  font-size: clamp(32px, 7vw, 100px);
-  max-width: 66vw; /* visualmente limita a ~2/3 del viewport */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-family:var(--font-title);
+  font-size:48px;
+  color:var(--blue);
+  letter-spacing:1px;
+  margin-bottom:28px;
 }
-
-/* NAV buttons: debajo del título, centrados y con espacio igual */
 .site-nav{
   display:flex;
-  gap: 48px; /* espacio entre botones; ajusta si quieres */
-  align-items:center;
   justify-content:center;
-  flex-wrap:wrap;
+  gap:48px;
 }
-
-/* Botón estilo: sin fondo, sin borde, tipografía de título y color #8BA3F2 */
-.site-nav .nav-btn{
-  font-family: var(--font-title);
-  font-size: 40px;         /* tamaño grande como pediste */
-  color: var(--lilac);
-  text-decoration: none;
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  transition: opacity .18s ease, transform .18s ease;
-  line-height: 1;
-}
-
-/* hover discreto */
-.site-nav .nav-btn:hover{
-  opacity: 0.75;
-  transform: translateY(-4px);
-}
-
-/* ---------- BANNER ---------- */
-.banner{
-  width:100%;
-  height:250px; /* como pediste */
-  overflow:hidden;
-}
-.banner .banner-img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-/* ---------- 3D DESIGN SECTION ---------- */
-.panel-3d, .section-3d { /* permite usar cualquiera de los dos nombres */
-  width:100%;
-  background: var(--night);
-  color: var(--sand);
-  padding: 40px 24px;
-  box-sizing: border-box;
-  min-height: 900px;
-}
-
-/* subtítulos reducidos y centrados en 3D */
-.panel-3d .panel-subtitle,
-.section-3d h2 {
-  font-family: var(--font-title);
-  font-size: 48px; /* menor tamaño */
-  color: var(--sand);
-  text-align: center; /* centrado en ancho de pantalla */
-  margin: 12px 0 28px;
-}
-
-/* gallery 3 items: centrado */
-.gallery-3d,
-.three-grid{
-  display:flex;
-  justify-content:center;
-  gap: 32px;
-  align-items:flex-start;
-  flex-wrap:wrap;
-}
-
-/* item */
-.gallery-3d .card,
-.three-grid .item{
-  width: 450px;
-  height: auto;
-  overflow:hidden;
-  position:relative;
-  border-radius:6px;
-  background:#111;
-  cursor:pointer;
-}
-
-/* main image + hover image stacked */
-.card-img,
-.item img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition: transform .45s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
-}
-
-/* hover alt image (put as .hover-img) */
-.card .hover-img,
-.item img.hover-img{
-  position:absolute;
-  top:0;
-  left:0;
-  opacity:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition: transform .45s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
-}
-
-/* on hover show hover-img and scale slightly */
-.card:hover .hover-img,
-.item:hover img.hover-img{
-  opacity:1;
-  transform: scale(1.05);
-}
-
-/* see more button: menos padding, bordes más redondeados */
-.see-more,
-.see-more-btn {
-  display:inline-block;
-  background: var(--sand);
-  color: var(--lilac);
+.site-nav a{
+  font-family:var(--font-title);
+  font-size:18px;
   text-decoration:none;
-  padding: 10px 18px;     /* menos padding */
-  border-radius: 24px;    /* más redondeado */
-  font-family: var(--font-title);
-  font-size: 18px;
-  margin: 28px auto 0;
-  transition: transform .15s ease, box-shadow .15s ease;
+  color:var(--lilac);
+  transition:opacity .2s;
 }
-.see-more:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-}
+.site-nav a:hover{opacity:.7;}
 
-/* ---------- 2D DESIGN SECTION ---------- */
-.panel-2d, .section-2d {
-  width:100%;
-  background: var(--sand);
-  color: var(--night);
-  padding: 40px 24px;
-  box-sizing: border-box;
-  min-height: 900px;
-}
+/* BANNER -------------------------------------------------- */
+.banner{width:100%;height:260px;background:#C9CDE4;}
+.banner-img{width:100%;height:100%;object-fit:cover;}
 
-/* 2D subtitle: color klein y centrado */
-.panel-2d .panel-subtitle,
-.section-2d h2 {
-  font-family: var(--font-title);
-  font-size: 48px; /* reducido */
-  color: var(--klein); /* #172FF1 */
-  text-align: center;
-  margin: 12px 0 28px;
-}
-
-/* four-grid: 4 images that fill the width exactly */
-.gallery-2d,
-.four-grid{
-  display:flex;
-  gap: 20px;
-  width:100%;
-}
-
-/* each card flexes equally to fill width; keeps aspect ratio via height */
-.gallery-2d .card,
-.four-grid .item{
-  flex: 1 1 0;
-  height: 530px; /* as requested */
-  position: relative;
-  overflow:hidden;
-  border-radius:6px;
-}
-
-/* images fill their card but keep proportion via object-fit */
-.gallery-2d img,
-.four-grid img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition: transform .45s ease, opacity .25s ease;
-}
-
-/* hover alt image behavior (if you supply hover images as .hover-img) */
-.gallery-2d .card .hover-img,
-.four-grid .item img.hover-img{
-  position:absolute;
-  top:0; left:0;
-  opacity:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition: transform .45s ease, opacity .25s ease;
-}
-.gallery-2d .card:hover .hover-img,
-.four-grid .item:hover img.hover-img{
-  opacity:1;
-  transform: scale(1.04);
-}
-
-/* see more outline button for 2D (keeping style requested) */
-.see-more-2d,
-.see-more-btn-2d{
-  display:inline-block;
-  background: var(--sand);
-  color: var(--lilac);
-  border-radius: 24px;
-  padding: 10px 18px;
-  font-family: var(--font-title);
-  font-size: 18px;
-  border: 1px solid var(--klein); /* 1px border */
-  margin: 28px auto 0;
-  text-decoration: none;
-}
-.see-more-2d:hover{ transform: translateY(-4px); }
-
-/* ---------- ABOUT (50% / 50%) ---------- */
-.about, .panel-about {
-  width:100%;
-  background: var(--night);
-  min-height: 500px;
-  display:flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 40px;
-  align-items:stretch;
-  box-sizing:border-box;
-}
-
-/* left image half */
-.about .about-img,
-.panel-about .about-img {
-  width:50%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-/* right text half */
-.about .about-text,
-.panel-about .about-text {
-  width:50%;
-  padding: 48px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  box-sizing:border-box;
-}
-
-/* about title & paragraph sizes */
-.about .about-hero,
-.panel-about .about-hero {
-  font-family: var(--font-title);
-  font-size: clamp(36px, 6vw, 60px);
-  color: var(--klein);
-  margin: 0 0 18px 0;
-}
-
-.about .about-paragraph,
-.panel-about .about-paragraph {
-  font-family: var(--font-text);
-  font-size: 30px;
-  color: #DEDEDE;
-  line-height:1.45;
-}
-
-/* contact button in about */
-.about .contact-btn,
-.panel-about .contact-btn {
-  display:inline-block;
-  margin-top: 20px;
-  padding: 10px 18px;
-  border-radius: 24px;
-  background: var(--sand);
-  color: var(--lilac);
-  text-decoration:none;
-  font-family: var(--font-title);
-  font-size: 22px;
-}
-
-/* ---------- SOCIAL ---------- */
-.social, .panel-social {
-  width:100%;
-  background: var(--night);
-  min-height:500px;
-  box-sizing:border-box;
-  padding: 40px 24px;
-  color: var(--sand);
+/* 3D SECTION -------------------------------------------------- */
+.panel-3d{
+  background:var(--night);
+  padding:80px 40px;
   text-align:center;
 }
-
-.social .social-title {
-  font-family: var(--font-title);
-  font-size: clamp(30px, 5vw, 60px);
-  color: var(--klein);
-  margin-bottom: 28px;
+.panel-3d h2{
+  font-family:var(--font-title);
+  font-size:32px;
+  color:var(--lilac);
+  margin-bottom:60px;
 }
-
-.social .social-icons {
+.gallery-3d{
   display:flex;
   justify-content:center;
-  gap: 60px;
+  gap:60px;
+  flex-wrap:wrap;
+}
+.gallery-3d .card{
+  width:280px;
+  height:340px;
+  background:#C9CDE4;
+}
+.see-more-wrap{margin-top:50px;}
+.see-more{
+  display:inline-block;
+  padding:10px 24px;
+  border-radius:22px;
+  background:var(--lilac);
+  color:var(--night);
+  font-family:var(--font-title);
+  text-decoration:none;
+}
+
+/* 2D SECTION -------------------------------------------------- */
+.panel-2d{
+  background:var(--lilac);
+  padding:80px 40px;
+  text-align:center;
+}
+.panel-2d h2{
+  font-family:var(--font-title);
+  font-size:32px;
+  color:var(--blue);
+  margin-bottom:50px;
+}
+.gallery-2d{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+.gallery-2d .card{
+  width:220px;
+  height:300px;
+  background:var(--night);
+}
+.see-more-outline{
+  display:inline-block;
+  padding:10px 24px;
+  border-radius:22px;
+  border:2px solid var(--blue);
+  background:transparent;
+  color:var(--blue);
+  font-family:var(--font-title);
+  text-decoration:none;
+  margin-top:50px;
+}
+
+/* ABOUT SECTION -------------------------------------------------- */
+.panel-about{
+  background:var(--night);
+  padding:80px 40px;
+  display:flex;
+  justify-content:center;
   align-items:center;
-  margin-top: 20px;
+  gap:60px;
+}
+.about-left img{
+  width:420px;
+  height:260px;
+  background:#C9CDE4;
+  object-fit:cover;
+}
+.about-right{
+  max-width:450px;
+}
+.about-hero{
+  font-family:var(--font-title);
+  font-size:36px;
+  color:var(--blue);
+  margin-bottom:20px;
+}
+.about-text{
+  font-size:16px;
+  color:var(--lilac);
+  margin-bottom:30px;
 }
 
-.social .social-icons img {
-  width:50px;
-  height:50px;
-  object-fit:contain;
-  /* tint to lilac approximated with filter; SVG would be better */
-  filter: brightness(0) saturate(100%) invert(68%) sepia(28%) saturate(556%) hue-rotate(187deg) brightness(97%) contrast(90%);
-  transition: transform .18s ease, filter .18s ease;
+/* SOCIAL -------------------------------------------------- */
+.panel-social{
+  background:var(--night);
+  text-align:center;
+  padding:80px 40px;
 }
-.social .social-icons img:hover{
-  transform: translateY(-6px);
-  filter: none;
+.social-title{
+  font-family:var(--font-title);
+  color:var(--blue);
+  font-size:28px;
+  margin-bottom:50px;
 }
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 1200px){
-  .site-title{ font-size: clamp(36px, 9vw, 96px); max-width:70vw; }
-  .site-nav .nav-btn{ font-size: 32px; gap: 28px; }
-  .gallery-3d .card, .three-grid .item{ width: 420px; height: 520px; }
-  .gallery-2d .card, .four-grid .item{ height:420px; }
+.social-icons{
+  display:flex;
+  justify-content:center;
+  gap:120px;
 }
-
-@media (max-width: 900px){
-  .header-inner{ gap:12px; padding: 24px; }
-  .site-title{ font-size: clamp(28px, 9vw, 64px); max-width:90vw; white-space: normal; }
-  .site-nav{ gap:16px; }
-  .site-nav .nav-btn{ font-size: 20px; }
-  .gallery-3d{ flex-direction: column; align-items:center; }
-  .three-grid .item{ width: 88vw; height: calc(88vw * 1.2); } /* keep approx aspect */
-  .gallery-2d{ flex-direction: column; gap:16px; }
-  .four-grid .item{ width:100%; height: calc(100vw * 0.7); }
-  .about{ flex-direction: column; min-height: auto; }
-  .about .about-img, .about .about-text{ width:100%; height:auto; }
-}
-
-@media (max-width: 520px){
-  .site-title{ font-size: clamp(20px, 8vw, 40px); }
-  .site-nav .nav-btn{ font-size: 18px; }
-  .banner{ height:160px; }
-  .panel-3d, .panel-2d{ padding: 28px 16px; }
-  .see-more, .see-more-2d{ font-size: 18px; padding: 8px 14px; border-radius: 18px; }
-  .gallery-3d .card, .three-grid .item{ width: 94vw; height: calc(94vw * 1.2); }
-  .four-grid .item{ height: calc(94vw * 0.9); }
+.social-icons img{
+  width:36px;
+  height:36px;
 }

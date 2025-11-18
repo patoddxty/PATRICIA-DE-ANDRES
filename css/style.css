@@ -254,6 +254,16 @@ body{
   padding: 60px 24px;
 }
 
+.about-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;   /* separa imagen y texto */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .about-img{
   width:45%;
   aspect-ratio: 16 / 9;
@@ -261,12 +271,22 @@ body{
   object-fit:cover;
 }
 
+.about-left,.about-right {
+  flex: 1;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .about-text{
-  width:45%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  color: var(--sand); /* My name is… en sand */
+  width: 100%;
+  height: auto;
+  max-width: 500px; /* ajustable */
+  display: block;
 }
 
 .about-hero{

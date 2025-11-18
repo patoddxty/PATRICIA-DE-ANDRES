@@ -212,7 +212,7 @@ body{ font-family: var(--font-text), system-ui, -apple-system, "Segoe UI", Robot
   width:100%;
   background: var(--sand);
   color: var(--night);
-  padding: 40px 24px;
+  padding: 20px 24px;
   box-sizing: border-box;
   min-height: 900px;
 }

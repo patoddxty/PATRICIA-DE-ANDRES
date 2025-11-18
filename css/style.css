@@ -294,6 +294,9 @@ body{ font-family: var(--font-text), system-ui, -apple-system, "Segoe UI", Robot
   background: var(--night);
   min-height: 500px;
   display:flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
   align-items:stretch;
   box-sizing:border-box;
 }

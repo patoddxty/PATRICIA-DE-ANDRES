@@ -314,6 +314,7 @@ body{
   text-decoration:none;
   width: max-content;
   margin-top: 6px;
+  align-items:left;
 }
 
 /* ========================================================= */

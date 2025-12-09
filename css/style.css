@@ -303,7 +303,7 @@ img:hover {
 
 .about-title{
   font-family: var(--font-title);
-  font-size: clamp(30px, 5vw, 56px);
+  font-size: clamp(40px, 5vw, 66px);
   color: var(--klein);
   margin-bottom: 16px;
 }

@@ -287,6 +287,7 @@ body{
   height: auto;
   max-width: 500px; /* ajustable */
   display: block;
+  color: var(--sand);
 }
 
 .about-title{
@@ -300,6 +301,7 @@ body{
   font-family: var(--font-text);
   font-size: 28px;
   color: var(--sand);
+  align: left;
   line-height: 1.45;
   margin-bottom: 24px;
 }

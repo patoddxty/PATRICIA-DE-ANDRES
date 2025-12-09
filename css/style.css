@@ -301,7 +301,7 @@ img:hover {
   color: var(--sand);
 }
 
-.about-title{
+.about-hero{
   font-family: var(--font-title);
   font-size: clamp(40px, 5vw, 66px);
   color: var(--klein);
